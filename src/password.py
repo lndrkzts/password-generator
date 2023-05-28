@@ -8,9 +8,13 @@ SPECIAL_CHARS_LIST = list(SPECIAL_CHARS)
 AMBIGUOUS_CHARS_LIST = ["i", "j", "l", "o", "I", "J", "L", "O", "1", "0"]
 
 
-def password_generator(length: int, needs_upper: bool, needs_lower: bool, needs_numbers: bool, needs_special: bool,
-                       min_numbers: int, min_special: int, avoid_ambiguous: bool) -> string:
+def password_generator(length: int = 8, needs_upper: bool = True, needs_lower: bool = True,
+                       needs_numbers: bool = True, needs_special: bool = True, min_numbers: int = 2,
+                       min_special: int = 2, avoid_ambiguous: bool = False) -> string:
     chars = ""
+
+    if not needs_lower and not needs_upper:
+        needs_lower = True
 
     if needs_upper:
         chars += string.ascii_uppercase
