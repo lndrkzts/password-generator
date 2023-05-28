@@ -3,7 +3,9 @@ import string
 import random
 
 from typing import List
-from src.constants import AMBIGUOUS_CHARS_LIST, SPECIAL_CHARS, SPECIAL_CHARS_LIST
+
+from src import counters
+from src.constants import SPECIAL_CHARS
 
 
 def password_generator(length: int = 8, needs_upper: bool = True, needs_lower: bool = True,
@@ -39,11 +41,11 @@ def password_generator(length: int = 8, needs_upper: bool = True, needs_lower: b
 
 def _validate_password(password_list: List, needs_upper: bool, needs_lower: bool, needs_numbers: bool,
                        needs_special: bool, min_numbers: int, min_special: int, avoid_ambiguous: bool) -> bool:
-    upper_count = sum(1 for e in password_list if e.isupper())
-    lower_count = sum(1 for e in password_list if e.islower())
-    numbers_count = sum(1 for e in password_list if e.isdigit())
-    special_count = sum(1 for e in password_list if e in SPECIAL_CHARS_LIST)
-    ambiguous_bool = any(e in AMBIGUOUS_CHARS_LIST for e in password_list)
+    upper_count = counters.upper_count(password_list)
+    lower_count = counters.lower_count(password_list)
+    numbers_count = counters.numbers_count(password_list)
+    special_count = counters.special_count(password_list)
+    ambiguous_bool = counters.ambiguous_check(password_list)
 
     if (needs_upper and (upper_count == 0)) or \
             (needs_lower and (lower_count == 0)) or \
