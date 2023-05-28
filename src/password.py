@@ -1,11 +1,9 @@
 import secrets
 import string
 import random
-from typing import List
 
-SPECIAL_CHARS = "!@#$%^&*"
-SPECIAL_CHARS_LIST = list(SPECIAL_CHARS)
-AMBIGUOUS_CHARS_LIST = ["i", "j", "l", "o", "I", "J", "L", "O", "1", "0"]
+from typing import List
+from src.constants import AMBIGUOUS_CHARS_LIST, SPECIAL_CHARS, SPECIAL_CHARS_LIST
 
 
 def password_generator(length: int = 8, needs_upper: bool = True, needs_lower: bool = True,
