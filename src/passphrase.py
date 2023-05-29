@@ -5,7 +5,8 @@ import random
 from random_word import RandomWords
 
 
-def passphrase_generator(words: int = 5, separator: str = '-', capitalize: bool = False, include_number: bool = False):
+def passphrase_generator(words: int = 5, separator: str = '-', capitalize: bool = False,
+                         include_number: bool = False) -> string:
     r = RandomWords()
     passphrase_list = [r.get_random_word() for _ in range(words)]
 
