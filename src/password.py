@@ -51,6 +51,6 @@ def _validate_password(password_list: List, needs_upper: bool, needs_lower: bool
             (needs_lower and (lower_count == 0)) or \
             (needs_numbers and (numbers_count < min_numbers)) or \
             (needs_special and (special_count < min_special)) or \
-            (avoid_ambiguous and not ambiguous_bool):
+            (avoid_ambiguous and ambiguous_bool):
         return False
     return True
