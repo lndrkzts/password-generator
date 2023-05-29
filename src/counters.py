@@ -25,3 +25,11 @@ def special_count(string: List | str) -> int:
 
 def ambiguous_check(string: List | str) -> bool:
     return any(e in AMBIGUOUS_CHARS_LIST for e in string)
+
+
+def words_count(string: str, separator: str = '-') -> int:
+    return len(string.split(separator))
+
+
+def char_count(string: str, char: str) -> int:
+    return string.count(char)
