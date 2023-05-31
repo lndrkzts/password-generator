@@ -1,7 +1,7 @@
 import unittest
 
-from src import counters
-from src.passphrase import passphrase_generator
+from password_generator import counters
+from password_generator.passphrase import passphrase_generator
 
 
 class TestGeneratePassphrase(unittest.TestCase):
