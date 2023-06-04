@@ -4,8 +4,8 @@ import random
 
 from typing import List
 
-from src import counters
-from src.constants import SPECIAL_CHARS
+from password_generator import counters
+from password_generator.constants import SPECIAL_CHARS
 
 
 def password_generator(length: int = 8, needs_upper: bool = True, needs_lower: bool = True,

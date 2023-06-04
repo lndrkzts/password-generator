@@ -1,6 +1,6 @@
 from typing import List
 
-from src.constants import SPECIAL_CHARS_LIST, AMBIGUOUS_CHARS_LIST
+from password_generator.constants import SPECIAL_CHARS_LIST, AMBIGUOUS_CHARS_LIST
 
 
 def upper_count(string: List | str) -> int:
